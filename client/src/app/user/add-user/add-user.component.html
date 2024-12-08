@@ -1,0 +1,28 @@
+
+<div *ngIf="show" class="alert alert-success" role="alert">
+  <div class="alert-items">
+    <div class="alert-item static">
+      <div class="alert-icon-wrapper">
+        <cds-icon class="alert-icon" shape="error-standard"></cds-icon>
+      </div>
+      <span class="alert-text">{{msg}}</span>
+    </div>
+  </div>
+</div>
+<form clrForm>
+    <clr-input-container>
+      <label>Full name</label>
+      <input placeholder="Full name" clrInput [(ngModel)]="input" name="name"  (ngModelChange)="change()" />
+      <clr-control-helper>User Name </clr-control-helper>
+      <clr-control-error>This field is required!</clr-control-error>
+    </clr-input-container>
+    <clr-input-container>
+      <label>email</label>
+      <input placeholder="your email" clrInput [(ngModel)]="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required  (ngModelChange)="changeEamail()" />
+      <clr-control-helper>user Email</clr-control-helper>
+      <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
+      <clr-control-error *clrIfError="'pattern'">This email invalid !</clr-control-error>
+    </clr-input-container>
+    <button class="btn btn-success" (click)="submit()" [disabled]="!testEmail && !testName" >Add user</button>
+  </form>
+  

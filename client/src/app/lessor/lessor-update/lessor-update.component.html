@@ -1,0 +1,135 @@
+<form clrStepper [formGroup]="form" (ngSubmit)="submit()">
+    <clr-stepper-panel formGroupName="name">
+      <clr-step-title>Coordonnées  de bailleur</clr-step-title>
+      <clr-step-description>.</clr-step-description>
+      <clr-step-content *clrIfExpanded>
+        <clr-input-container>
+          <label>Nom:</label>
+          <input clrInput formControlName="firstName" />
+          <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+          <clr-control-error *clrIfError="'pattern'" >champs textuelle</clr-control-error>
+          <clr-control-error *clrIfError="'minlength'" > 2 caracteres au minimum </clr-control-error>
+  
+        </clr-input-container>
+        <clr-input-container>
+          <label>Prenom:</label>
+          <input clrInput formControlName="lastName" />
+          <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+          <clr-control-error *clrIfError="'pattern'" >champs textuelle</clr-control-error>
+          <clr-control-error *clrIfError="'minlength'" >2 caracteres au minimum </clr-control-error>
+        </clr-input-container>
+        <clr-input-container>
+          <label>Utilisateur-Nom:</label>
+          <input clrInput formControlName="Name" />
+          <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+          <clr-control-error *clrIfError="'pattern'" >champs textuelle</clr-control-error>
+          <clr-control-error *clrIfError="'minlength'" >2 caracteres au minimum </clr-control-error>
+        </clr-input-container>        
+        <button clrStepButton="next">suivant</button>
+      </clr-step-content>
+    </clr-stepper-panel>
+  
+    <clr-stepper-panel formGroupName="contact">
+      <clr-step-title>Contact bailleur</clr-step-title>
+      <clr-step-content *clrIfExpanded>
+        <clr-input-container>
+          <label>Email:</label>
+          <input clrInput formControlName="email" />
+          <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+          <clr-control-error *clrIfError="'email'" > email invalide</clr-control-error>
+        </clr-input-container>
+  
+        <clr-input-container>
+          <label>Phone:</label>
+          <input clrInput formControlName="phone" />
+          <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+          <clr-control-error *clrIfError="'pattern'" > numéro de télèphone est invalide</clr-control-error>
+        </clr-input-container>
+        <clr-input-container>
+            <label>Fax:</label>
+            <input clrInput formControlName="Fax" />
+            <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+            <clr-control-error *clrIfError="'pattern'" > numéro de fax est invalide</clr-control-error>
+          </clr-input-container>
+  
+        <button clrStepButton="next">suivant</button>
+      </clr-step-content>
+    </clr-stepper-panel>
+    <clr-stepper-panel formGroupName="adresse">
+        <clr-step-title>Adresse bailleur</clr-step-title>
+        <clr-step-content *clrIfExpanded>
+          <clr-input-container>
+            <label>Ville:</label>
+            <input clrInput formControlName="cite" />
+            <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+          </clr-input-container>
+    
+          <clr-input-container>
+            <label>code postal:</label>
+            <input clrInput formControlName="CodePostale" />
+            <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+            <clr-control-error *clrIfError="'pattern'" > code postal invalide</clr-control-error>
+          </clr-input-container>
+          <clr-input-container>
+              <label>addresse:</label>
+              <input clrInput formControlName="stress" />
+              <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+              <clr-control-error *clrIfError="'pattern'" > adresse invalide</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+                <label>rue:</label>
+                <input clrInput formControlName="ad" />
+                <clr-control-error *clrIfError="'required'" >champs obligatoire</clr-control-error>
+          
+              </clr-input-container>
+              <button clrStepButton="next">suivant</button>
+            </clr-step-content>
+          </clr-stepper-panel>
+    
+    
+    <clr-stepper-panel formGroupName="submit">
+      <clr-step-title>Sumbit</clr-step-title>
+  <!-- title-->
+  
+      <clr-step-content *clrIfExpanded>
+     
+  
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="left">Nom</th>
+              <th>Prenom</th>
+              <th>Nom 'utilisateur</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Fax</th>
+              <th>Ville</th>
+              <th>adrese</th>
+              <th>code postal</th>
+              <th> RUe</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left">{{form.value.name.firstName}}</td>
+              <td>{{form.value.name.lastName}}</td>
+              <td>{{form.value.name.Name}}</td>
+              <td>{{form.value.contact.email}}</td>
+              <td>{{form.value.contact.phone}}</td>
+              <td>{{form.value.contact.fax}}</td>
+              <td>{{form.value.adresse.cite}}</td>
+              <td>{{form.value.adresse.stress}}</td>
+              <td>{{form.value.adresse.CodePostale}}</td>
+              <td>{{form.value.adresse.ad}}</td>
+            </tr>
+            
+          
+          </tbody>
+        </table>
+        <button clrStepButton="submit">submit</button>
+  
+         <!-- container-->
+      </clr-step-content>
+    </clr-stepper-panel>
+  </form>

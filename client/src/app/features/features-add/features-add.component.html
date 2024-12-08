@@ -1,0 +1,44 @@
+<form clrStepper [formGroup]="form" (ngSubmit)="submit()">
+    
+    <clr-stepper-panel formGroupName="name">
+      <clr-step-title>Caractéristique</clr-step-title>
+      <clr-step-content *clrIfExpanded>
+        
+       
+        <clr-input-container>
+          <label for="title">Titre</label>
+          <input clrInput id="title" formControlName="Title" placeholder="Entrez le titre" />
+          <clr-control-error *clrIfError="'required'">Le champ est obligatoire.</clr-control-error>
+          <clr-control-error *clrIfError="'minlength'">Le titre doit avoir au moins 2 caractères.</clr-control-error>
+          <clr-control-error *clrIfError="'pattern'">Le titre ne peut contenir que des lettres.</clr-control-error>
+        </clr-input-container>
+    
+        <clr-input-container>
+          <label for="description">Description</label>
+          <textarea clrInput id="description" formControlName="description" placeholder="Entrez la description"></textarea>
+          <clr-control-error *clrIfError="'required'">Le champ est obligatoire.</clr-control-error>
+          <clr-control-error *clrIfError="'pattern'">La description ne peut contenir que des lettres.</clr-control-error>
+        </clr-input-container>
+  
+        <!--<clr-checkbox-container>
+          <clr-checkbox-wrapper>
+            <input type="checkbox" clrCheckbox formControlName="acceptConditions" />
+            <label>Accepter les conditions</label>
+          </clr-checkbox-wrapper>
+        </clr-checkbox-container>
+  
+        
+        <button clrStepButton="next">Suivant</button>
+      </clr-step-content>
+    </clr-stepper-panel>
+  
+    
+    <clr-stepper-panel formGroupName="submit">
+      <clr-step-title>Submit</clr-step-title><!-->
+      <clr-step-content *clrIfExpanded>
+        <button clrStepButton="submit">Submit</button>
+      </clr-step-content>
+      </clr-step-content>
+    </clr-stepper-panel>
+  </form>
+  

@@ -1,0 +1,16 @@
+<div class="main-container">
+    <app-header></app-header>
+    <div class="content-container">
+        <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
+            <app-side-nav></app-side-nav>
+        </clr-vertical-nav>
+        <div class="content-area">
+          <!-- <app-lessor-add></app-lessor-add>-->
+           <!-- <app-lessor-update></app-lessor-update>-->
+            <!-- <app-add-user></app-add-user> -->
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+
