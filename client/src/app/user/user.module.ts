@@ -5,6 +5,7 @@ import { ClarityModule } from '@clr/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { DetailluserComponent } from './detailluser/detailluser.component';
+import { LoginuserComponent } from './loginuser/loginuser.component';
 
 
 
@@ -13,6 +14,7 @@ import { DetailluserComponent } from './detailluser/detailluser.component';
     AddUserComponent,
     UpdateUserComponent,
     DetailluserComponent,
+    LoginuserComponent,
     
   ],
   imports: [
